@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Webpages Carousel</title>
+        <style>
+            *{
+                box-sizing: border-box;
+                margin:0px;
+                border:0px;
+                
+            }
+            body{
+                margin:0px;
+                border:0px;
+                font-family: 'Times New Roman', Times, serif;
+                
+            }
+            h1{
+                font-size:150%;
+                color:black;
+                text-align:center;
+                text-transform: capitalize;
+
+            }
+            .prev,.next {
+                cursor: pointer;
+                width: auto;
+                padding:10px;
+                margin-top:0px;
+                color:orangered;
+                font-weight: bold;
+                font-size: 20px;
+                border-radius: 0 3px 3px 0;
+                opacity: 0.5px;
+
+            }
+        
+        </style>
+    </head>
+    <body>
+        <h1>Slideshow / Carousel</h1><br>
+         <div style="display:flex;flex-direction: column;align-items: center;justify-content: flex-start;"> 
+         <div style="display: flex;align-items: center; justify-content: space-between;">
+            <button class="prev" type="button" id="btn1" name="previous" onclick=''><</button>
+            <img  alt="photos for" style="width:1000px;"src="/home/sagar/Documents/sandbox/basics of javascript/img_mountains_wide.jpg" 
+            id="container-image"/>
+            <button class="next" type="button" id="btn1" name="Next" onclick="onclick(url[i])">></button>
+         </div>
+            
+        </div>
+        <div style="display:flex;flex-direction:row;justify-content:flex-start;align-items:center;position:absolute; padding-top:15px;" id="image-titles">
+        </div>
+
+    </body>
+    <script>
+        function slidshow(url){
+            var x=document.createElement("img");
+            x.setAttribute("src", url);
+            x.setAttribute("width","150px");
+            x.setAttribute("height","150px");
+            x.setAttribute("alt", "pics");
+            x.style.margin="10px";
+            //document.getElementById('container-image');
+            document.getElementById('image-titles').appendChild(x);
+            
+        }
+         var url = [
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIRp7vMDFwVep65d-_SdqoDgnRRKXrc2EzTw&usqp=CAU',
+             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjR-kz-HdAv6KUhhsvHjRCZ4L7eBbupz-Q2Q&usqp=CAU',
+             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx1W03xaQFmJsywbOYeYRTt0HCEd5oXZwG6A&usqp=CAU',
+             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4_ZF7qSHnldmSZ5fOo_T0a7vh8_GZ-RtRPw&usqp=CAU',
+             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-48AqnXFe-_bQAdJW5o_Q3jfFDKMU9HAvNQ&usqp=CAU',
+             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDc7I7NRJ6fK6e586GjEGrkq5zshd94tNbTA&usqp=CAU ',
+             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWPl5KoP7VPoZARUFp0DmIgYKUOBO8EitENw&usqp=CAU',
+             '/home/sagar/Documents/sandbox/basics of javascript/img_mountains_wide.jpg'
+    ];
+    var img;
+for (var i = 0; i < url.length; i++) {
+  slidshow(url[i])
+}
+function myclick(url){
+    if(i>url.length)
+    {
+        document.getElementById('container-image');
+    }
+    myclick(url[i])
+}
+
+    </script>
+</html>
